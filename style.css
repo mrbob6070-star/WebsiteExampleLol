@@ -1,0 +1,146 @@
+/* =========================================================
+   EDIT ME: change these values to re-theme the whole site.
+   ========================================================= */
+:root {
+  --paper: #f6f5f1;      /* background */
+  --ink: #16211c;        /* main text */
+  --ink-soft: #4b564f;   /* secondary text */
+  --accent: #1f4d3a;     /* buttons, links, accents */
+  --accent-soft: #dfe8e1;/* light accent backgrounds */
+  --line: #dcdad2;       /* borders/dividers */
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+
+  --max-width: 860px;
+}
+
+/* ---------- Reset-ish basics ---------- */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+}
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--font-display); margin: 0 0 0.4em; line-height: 1.15; }
+p { margin: 0 0 1em; color: var(--ink-soft); }
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section { padding: 72px 0; }
+
+/* ---------- Header ---------- */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  padding: 20px 0;
+}
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+.site-header nav a {
+  margin-left: 24px;
+  text-decoration: none;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+.site-header nav a:hover { color: var(--accent); }
+
+/* ---------- Hero ---------- */
+.hero { padding-top: 96px; padding-bottom: 96px; }
+.hero-eyebrow {
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+.hero h1 {
+  font-size: clamp(2.1rem, 5vw, 3.2rem);
+  font-weight: 500;
+  max-width: 14ch;
+}
+.hero-sub {
+  max-width: 46ch;
+  font-size: 1.05rem;
+}
+.hero-actions { margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: opacity 0.15s ease;
+}
+.btn:hover { opacity: 0.85; }
+.btn-primary { background: var(--accent); color: var(--paper); }
+.btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--line); }
+
+/* ---------- Work / cards ---------- */
+.work { border-top: 1px solid var(--line); }
+.work h2, .about h2, .contact h2 { font-size: 1.6rem; font-weight: 500; margin-bottom: 32px; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+.card {
+  padding: 24px;
+  background: var(--accent-soft);
+  border-radius: 8px;
+}
+.card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+.card p { font-size: 0.95rem; }
+.card-link {
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+/* ---------- About ---------- */
+.about { border-top: 1px solid var(--line); }
+.about p { max-width: 60ch; }
+
+/* ---------- Contact ---------- */
+.contact { border-top: 1px solid var(--line); }
+.socials { margin-top: 20px; display: flex; gap: 20px; }
+.socials a { text-decoration: none; color: var(--ink-soft); font-size: 0.95rem; }
+.socials a:hover { color: var(--accent); }
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 32px 0;
+}
+.site-footer p { margin: 0; font-size: 0.85rem; color: var(--ink-soft); }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 600px) {
+  section { padding: 48px 0; }
+  .site-header nav a { margin-left: 14px; font-size: 0.9rem; }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
